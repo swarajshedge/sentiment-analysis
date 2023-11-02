@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sentiment Analysis Outcome</title>
+    <style>
+      h1 {
+        text-align: center;
+        color: #C55A11;
+      }
+      table {
+        border-collapse: collapse;
+        margin: auto;
+      }
+      th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: center;
+      }
+      
+        td.positive {
+        color: green;
+      }
+      td.negative {
+        color: red;
+      }
+      td.neutral {
+        color: #6495ED;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Sentiment Analysis Outcome</h1>
+    <table>
+      <tr>
+        <th>ASPECT</th>
+        <th>POLARITY</th>
+        <th>SENTIMENT</th>
+      </tr>
+      {% for key, value in sentiment.items() %}
+      <tr>
+        <td>{{ key.upper().split('_')[0] }}</td>
+        <td>{{ value[0] }}</td>
+        <td class="{% if value[1] == 'Positive' %}positive{% elif value[1] == 'Negative' %}negative{% elif value[1] == 'Neutral' %}neutral{% endif %}">{{ value[1] }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sentiment Analysis Demo</title>
+    <style>
+      h1, h2 {
+        text-align: center;
+      }
+      h1 {
+        color: #C55A11;
+      }
+      .form-container {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Sentiment Analysis App</h1>
+    <h2>NLP Benchmarking - Applus Idiada - Capstone Project</h2>
+    <div class="form-container">
+      <form method="POST" action="/predict">
+        <label for="message">Enter the required text:</label>
+        <br>
+        <textarea name="message" rows="4" cols="50"></textarea>
+        <br><br>
+        <button type="submit">Predict Sentiment</button>
+      </form>
+    </div>
+  </body>
+</html>
